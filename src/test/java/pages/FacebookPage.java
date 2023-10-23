@@ -7,6 +7,11 @@ import utilities.Driver;
 
 public class FacebookPage {
 
+    /*
+    Bir page sayfasini actiysak yapmamiz gereken ilk sey
+    public olarak parametresiz constructor olusturmaktir.
+    ve Driver'imizi bu classta kullanilmak uzere tanitmak
+     */
     public FacebookPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -21,7 +26,7 @@ public class FacebookPage {
     public WebElement loginButonu;
 
     @FindBy(xpath = "//*[@*='Allow all cookies']")
-    public WebElement cookiesKabulButonu;
+   public WebElement cookiesKabulButonu;
 
     @FindBy(xpath = "//div[@class='_9ay7']")
     public WebElement girisYapilamadiYaziElementi;

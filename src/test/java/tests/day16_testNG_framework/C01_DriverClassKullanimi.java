@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import utilities.Driver;
 
-public class C01_DriverClassKullanimi {
+public class C01_DriverClassKullanimi { // artik extends donemi bitti
 
     @Test(groups = {"smoke"})
     public void amazonTest(){
@@ -17,7 +17,7 @@ public class C01_DriverClassKullanimi {
         WebElement aramaKutusu = Driver.getDriver().findElement(By.id("twotabsearchtextbox"));
 
         // sayfayi kapatin
-        Driver.closeDriver();
+        Driver.closeDriver(); // driver classindanki closeDriver()'i kullanarak
     }
 
     @Test(groups = {"smoke","regression"})

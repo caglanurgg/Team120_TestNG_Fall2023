@@ -7,6 +7,12 @@ import utilities.Driver;
 
 public class QualitydemyPage {
 
+     /*
+    Bir page sayfasini actiysak yapmamiz gereken ilk sey
+    public olarak parametresiz constructor olusturmaktir.
+    ve Driver'imizi bu classta kullanilmak uzere tanitmak
+     */
+
     public QualitydemyPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -20,7 +26,11 @@ public class QualitydemyPage {
     @FindBy(id = "login-password")
     public WebElement passwordKutusu;
 
-    @FindBy(xpath = "//button[text()='Login']")
+    @FindBy(xpath = "//div[@class='cookieButton']")
+    public WebElement cookieAccept;
+
+
+    @FindBy(xpath = "(//button[@type='submit'])[2]")
     public WebElement loginButonu;
 
     @FindBy(linkText = "My courses")

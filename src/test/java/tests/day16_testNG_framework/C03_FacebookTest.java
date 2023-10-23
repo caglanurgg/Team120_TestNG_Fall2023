@@ -13,15 +13,15 @@ public class C03_FacebookTest {
     public void facebookTesti(){
         //1 - https://www.facebook.com/ adresine gidin
         Driver.getDriver().get("https://www.facebook.com/");
-        //2- POM’a uygun olarak email, sifre kutularini ve giris yap butonunu locate edin
+        //2- POM’a uygun olarak email, sifre kutularini ve giris yap butonunu LOCATE EDIN
 
         ReusableMethods.bekle(1);
 
         //3- Faker class’ini kullanarak email ve sifre degerlerini yazdirip, giris butonuna basin
 
         Faker faker = new Faker();
-        FacebookPage facebookPage = new FacebookPage();
-        facebookPage.cookiesKabulButonu.click();
+        FacebookPage facebookPage = new FacebookPage(); // FacebookPage'den obje olusturdum
+        //facebookPage.cookiesKabulButonu.click();
         ReusableMethods.bekle(1);
 
         facebookPage.emailKutusu.sendKeys(faker.internet().emailAddress());

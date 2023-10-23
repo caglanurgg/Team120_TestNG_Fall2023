@@ -19,9 +19,18 @@ public class AmazonPage {
     public AmazonPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+    // bu AmazonPage sayfasinda driver olarak benim olusturdugum
+    // Driver classında getDriver ile olusturdugum driver'i kullan
+    // artik otomatik olarak AmazonPage'den bir obje olusturuldugunda
+    // Amazon constructor'i calisacak Amazon constructor'i calistiginda da
+    // bu classda gecerli driver olarak Driver.getDriver() kullan diyecek
 
-    @FindBy(id ="twotabsearchtextbox")
-    public WebElement aramaKutusu;
+    // benim istedigim constructor calissin default constructor calismasin diye
+    // buraya bir tane parametresiz constructor olusturuyorum
+    // farkli package'larda oldugum icinde public yapmam lazim
+
+    @FindBy(id ="twotabsearchtextbox") // artik driver.findElement() yok
+    public WebElement aramaKutusu; // artik bi daha arama kutusunu locate etmek yok
 
     @FindBy(xpath = "//div[@class='a-section a-spacing-small a-spacing-top-small']")
     public WebElement sonucYaziElementi;

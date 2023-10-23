@@ -67,5 +67,26 @@ public class Driver {
                         // ki sonraki calismalarda yeniden acilsin
         }
     }
+/*
+16.dersle ilgili
 
+static WebDriver driver; //biz  deger atamadigimiz icin Java default olarak null point eder
+public static WebDriver getDriver(){
+
+WebDriverManager.chromedriver().setup();
+
+if(driver == null){ // driver null olarak isaretlenmis ise
+driver = new ChromeDriver(); // driver'a yeni deger ata
+                            // artik driver null olmasin new ChromeDriver() olsun
+}
+
+class ilk calıstıgında once static seyleri halledecegi icin driver null olarak isaretlenir
+getDriver() methodu'nu ilk kullanıldıgında driver'i null olarak gorecek
+bu andan itibaren driver'imizin degeri ChromeDriver
+
+sonraki seferlerde getDriver() methodu calisinca driver null olmadigindan
+yeniden driver olusturmayacak.
+
+
+ */
 }

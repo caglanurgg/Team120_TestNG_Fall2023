@@ -8,7 +8,7 @@ import utilities.ReusableMethods;
 
 public class C05_QualitydemyNegatifLoginTesti {
 
-    QualitydemyPage qualitydemyPage;
+    QualitydemyPage qualitydemyPage; // diger testlerde de kullanabileyim diye
 
     @Test(groups = {"smoke","regression"})
     public void gecersizPasswordTest(){
@@ -22,7 +22,7 @@ public class C05_QualitydemyNegatifLoginTesti {
         qualitydemyPage.passwordKutusu.sendKeys("12345");
         qualitydemyPage.loginButonu.click();
 
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(5);
         Assert.assertTrue(qualitydemyPage.emailKutusu.isDisplayed());
 
         Driver.closeDriver();
@@ -38,7 +38,7 @@ public class C05_QualitydemyNegatifLoginTesti {
         qualitydemyPage.passwordKutusu.sendKeys("Nevzat152032");
         qualitydemyPage.loginButonu.click();
 
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(5);
         Assert.assertTrue(qualitydemyPage.emailKutusu.isDisplayed());
         Driver.closeDriver();
     }
@@ -53,8 +53,21 @@ public class C05_QualitydemyNegatifLoginTesti {
         qualitydemyPage.passwordKutusu.sendKeys("12345");
         qualitydemyPage.loginButonu.click();
 
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(5);
         Assert.assertTrue(qualitydemyPage.emailKutusu.isDisplayed());
         Driver.closeDriver();
     }
+
+    /*
+    TestNG framework ile ilgili halletmemiz gereken bir tek Test Data'miz kaldi.
+    adres
+    gecerli email - gecersiz sifre
+    gecersiz email - gecerli sifre
+    gecersiz email - gecersiz sifre
+    bunlar test datasi artik bunlari da bir kere kaydedecegiz bir daha onlarla ugrasmayacagiz
+    mesela facebook'a git diyecegiz ama tekrar https://www.facebook.com/ yazmakla ugrasmayacagiz
+
+    tamamiyla baska yerden yonetilen, tek bir yerden kontrol edilebilecegim
+    test datalari ve locatorlar olacak.
+     */
 }
