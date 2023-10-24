@@ -17,6 +17,8 @@ public class C01_Priority {
     }
 
     @Test(groups = {"smoke","e2e1","regression"})
+    //bu test methodu hangi testlerde calisacaksa onlari 19.satirdaki gibi
+    //gruplandirabilirim (day18 xmlfile kullanimi)
     public void toplamaTesti(){
         // sayilarin toplaminin pozitif bir sayi oldugunu test edin
 

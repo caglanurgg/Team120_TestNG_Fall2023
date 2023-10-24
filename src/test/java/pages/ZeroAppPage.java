@@ -7,6 +7,12 @@ import utilities.Driver;
 
 public class ZeroAppPage {
 
+    /*
+  Bir page sayfasini actiysak yapmamiz gereken ilk sey
+  public olarak parametresiz constructor olusturmaktir.
+  ve Driver'imizi bu classta kullanilmak uzere tanitmak
+   */
+
     public ZeroAppPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -33,5 +39,5 @@ public class ZeroAppPage {
     public WebElement purchaseFCurrencyElementi;
 
     @FindBy(id = "pc_currency")
-    public WebElement pcCurrencyDropdown;
+    public WebElement pcCurrencyDropdown; //tagi selectli olan
 }

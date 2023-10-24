@@ -9,6 +9,11 @@
     esit yuk dagitma, bagli testlerin ayni browser'a verilmesi... 
     gibi konulara dikkat edilmelidir
 
+    thread-count ==> es zamanli is parcacigi yani ayni anda kaç tane browser calısacak
+
+    parallel==> bu browserlar gorevi neye gore paylaşacak
+                method metod mu tests tests mi  buna karar veriyoruz.
+
     verbose ==> konsolda yazdirilan ayrinti miktarini kontrol eder
                 1-10 arasinda deger alir
                 1 en az ayrinti
