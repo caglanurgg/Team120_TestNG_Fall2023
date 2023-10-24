@@ -10,7 +10,7 @@ public class C03_DriverSingletonPattern {
     @Test
     public void test01(){
 
-        /*
+/*
             POM kapsaminda
             locate'ler, test datalari ve WebDriver'i dinamiklestirdik
             hepsinin POM tarafindan belirlenen erisim sekilleri var
@@ -21,12 +21,15 @@ public class C03_DriverSingletonPattern {
             WebDriver kullanimini engellemek icin
             Singleton Pattern kullanmislar
 
-            Singleton Pattern bir class'dan obje olusturulmasini
+            -->Singleton Pattern bir class'dan obje olusturulmasini
             engelleyen yontemlerden birisi
 
-            Singleton pattern default constructor'i gorunur yapip
+            -->yontemi: Singleton pattern default constructor'i gorunur yapip
             access modifier'ini private yaparak
-            constructor'a erisimi, dolayisiyla da obje olusturmayi engeller
+            constructor'a erisimi, dolayisiyla da obje olusturmayi ENGELLER
+
+            eger bir class'tan obje olusturmalarina izin vermek istemiyorsan
+            Singleton pattern kullanabilirsin.
 
 
 
@@ -36,7 +39,7 @@ public class C03_DriverSingletonPattern {
         ReusableMethods.bekle(3);
 
         driver.closeDriver();
+ */
 
-        */
     }
 }

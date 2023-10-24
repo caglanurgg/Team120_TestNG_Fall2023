@@ -23,6 +23,7 @@ public class Driver {
     private Driver(){
         // Bu constructor default constructor ile ayni islevi yapan parametresiz constructor'dir
         // buna erisimi kontrol edebilecegimiz icin bu constructor'i olusturduk
+        //day17 C03 'le alakali
     }
 
     static WebDriver driver; // biz deger atamadigimiz icin Java default olarak null point eder

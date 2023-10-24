@@ -17,13 +17,22 @@ public class C01_configurationPropertiesKullanimi {
         Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
         // parantezin icin configuration.properties dosyasindan amazonUrl'i
         // bana getirecek bir seyler yazmam lazim
+        // artik buraya https://www.amazon.com degil
+        // git configuration.properties'dan amazonUrl'i getir diyecegiz.
+        //configuration.properties java alaninin  disina src'nin altina koyduk
 
         // arama kutusuna aranacak kelimeyi yazdirin ve aratin
         AmazonPage amazonPage = new AmazonPage();
         amazonPage.aramaKutusu.sendKeys(ConfigReader.getProperty("amazonAranacakKelime") + Keys.ENTER);
 
-        // arama sonuclarinin aranan kelimeyi icerdigini test edin
+        //ConfigReader.getProperty= meydanci'ya diyorum ki
+        // bana utilities package'indaki ConfigReader class'inda bulunan
+        // "amazonAranacakKelime" yi getir.
+        // meydanci da ilk once configuration.properties'e gidiyor amazonAranacakKelime olan
+        // Nutella'yla donuyor. Nutella'yi da bana getiriyor.
 
+
+        // arama sonuclarinin aranan kelimeyi icerdigini test edin
         String expectedIcerik = ConfigReader.getProperty("amazonAranacakKelime");
         String actualAramaSonucu = amazonPage.sonucYaziElementi.getText();
 
