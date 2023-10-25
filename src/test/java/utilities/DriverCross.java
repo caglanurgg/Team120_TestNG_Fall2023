@@ -17,6 +17,9 @@ public class DriverCross {
     }
 
     public static WebDriver getDriver(String browser){
+        //*bizim xml'den TestBase'e parametre olarak yolladigimiz
+        //*browser bilgisi(chrome,firefox gibi) getDriver() methodu calisirken de
+        //*Driver'a geliyor
 
 
         browser = browser==null ? ConfigReader.getProperty("browser") : browser ;

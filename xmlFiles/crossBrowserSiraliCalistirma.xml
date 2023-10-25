@@ -22,11 +22,11 @@
 
     1- xml dosyasinda farkli browser'lar ile calistirmak isetdegimiz
        dosyalari, farkli test tag'lari altinda secelim.
-    2- her browser icin hazirladigimiz test'lere parapetre olarak
+    2- her browser icin hazirladigimiz test'lere parametre olarak
        browser'lari atayalim
     3- bizim parameter olarak xml'e yazdigimiz browser,
-       @Parameters notasyonu sayesinde TestBaseCross class'inda okunur
-    4- TestBaseCross xml dosyasindan parametre olarak aldigi bowser'i
+       @Parameters notasyonu sayesinde TestBaseCross class'inda OKUNUR.
+    4- TestBaseCross xml dosyasindan parametre olarak aldigi browser'i
        kullanip DriverCross class'inda istenen browser ile WebDriver olusturup
        "driver" objesine kaydeder
     5- Cross browser testler ozel duzenleme ile olusturdugumuz "driver"i kullanacaklari icin

@@ -14,15 +14,15 @@ public class C02_AlertsTesti extends TestBaseCross {
     public void test01() throws InterruptedException {
 
         // 1. Test
-        //            -  https://the-internet.herokuapp.com/javascript_alerts adresine gidin
+        // -  https://the-internet.herokuapp.com/javascript_alerts adresine gidin
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
 
-        //            - 1.alert'e tiklayin
+        //      - 1.alert'e tiklayin
 
         WebElement ilkAlertElementi = driver.findElement(By.xpath("//*[text()='Click for JS Alert']"));
         ilkAlertElementi.click();
 
-        //            -  Alert'deki yazinin "I am a JS Alert" oldugunu test edin
+        //    -  Alert'deki yazinin "I am a JS Alert" oldugunu test edin
 
         String expectedAlertYazisi = "I am a JS Alert";
         String actualAlertYazisi = driver.switchTo().alert().getText();
@@ -31,7 +31,7 @@ public class C02_AlertsTesti extends TestBaseCross {
         // Assert.assertEquals(expectedAlertYazisi,actualAlertYazisi);
         softAssert.assertEquals(actualAlertYazisi,expectedAlertYazisi,"alertteki yazi belirlenenden farkli");
 
-        //            -  OK tusuna basip alert'i kapatin
+        //   -  OK tusuna basip alert'i kapatin
 
         driver.switchTo().alert().accept();
 
