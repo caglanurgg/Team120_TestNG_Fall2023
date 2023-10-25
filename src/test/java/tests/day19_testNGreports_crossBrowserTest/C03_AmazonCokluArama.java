@@ -26,20 +26,21 @@ public class C03_AmazonCokluArama {
 
         for (int i = 0; i < aranacakUrunler.length ; i++) {
 
-            amazonPage.aramaKutusu.clear();
+            amazonPage.aramaKutusu.clear(); //*NutellaJava olmasin diye temizliyoruz
             amazonPage.aramaKutusu.sendKeys(aranacakUrunler[i] + Keys.ENTER);
 
             aramaSonucu = amazonPage.sonucYaziElementi.getText();
             aramaSonucKelimeleri = aramaSonucu.split(" ");
 
-            if (aramaSonucKelimeleri[2].equals("over")){
-                aramasonucSayisiStr = aramaSonucKelimeleri[3];
+            if (aramaSonucKelimeleri[2].equals("over")){ //*2.index'deki "over"sa
+                aramasonucSayisiStr = aramaSonucKelimeleri[3];//*3.index'i alayim
             }else{
-                aramasonucSayisiStr = aramaSonucKelimeleri[2];
+                aramasonucSayisiStr = aramaSonucKelimeleri[2];//*degilse 2.index'i alayim
             }
 
             aramasonucSayisiStr = aramasonucSayisiStr.replaceAll("\\D","");
             aramaSonucSayisiInt = Integer.parseInt(aramasonucSayisiStr);
+            //*artik Integar'a cevirebilirim
 
             Assert.assertTrue(aramaSonucSayisiInt>100);
         }

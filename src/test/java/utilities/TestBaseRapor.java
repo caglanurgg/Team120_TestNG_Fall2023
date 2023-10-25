@@ -14,11 +14,25 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public abstract class TestBaseRapor {
+
+    /*
+    Testimize rapor olusturma adimlari
+    1- Test class’ini extends ile TestBaseRapor Class’ina child yapalim
+    2- extentTest=extentReports.createTest(“Test ismi”, “Tanim”); rapor olusturalim
+    3- Gerekli/istedigimiz satirlara extentTest.info(“Aciklama”) ekleyelim
+    4- Assert olan satirda aciklamayi extentTest.pass ile yapabiliriz
+     */
     protected static ExtentReports extentReports; //extent report'a ilk atamayi yapar
     protected static ExtentTest extentTest; // test pass veya failed gibi bilgileri kaydeder. Ayrica ekran resmi icin de kullaniriz
     protected static ExtentHtmlReporter extentHtmlReporter; // Html raporu duzenler
 
-    // Test işlemine başlamadan hemen önce (test methodundan önce değil, tüm test işleminden önce)
+    //* 25.satir,  26.satir ve 27.satirda 3 tane obje olusturduk
+    //* bunlar protected cunku TestBase oldugu icin child classlardan kullanicaz
+
+
+    //*@BeforeTest butun classlardan butun methodlardan once 1 kere calisacak ve
+    //* testle ilgili HAZIRLIKLARI yapacak
+    //Test işlemine başlamadan hemen önce (test methodundan önce değil, tüm test işleminden önce)
     @BeforeTest(alwaysRun = true) // alwaysRun : her zaman çalıştır.
     public void setUpTest() {
         extentReports = new ExtentReports(); // Raporlamayi baslatir
@@ -30,6 +44,8 @@ public abstract class TestBaseRapor {
         extentReports.attachReporter(extentHtmlReporter);
 
         // İstediğiniz bilgileri buraya ekeyebiliyorsunuz.
+        //*Burasi raporunuzda gorulecek bilgiler ne zaman isterseniz degistirebilirsiniz
+        //*bunu degistirdikten sonraki raporunuzda bu bilgiler olur
         extentReports.setSystemInfo("Enviroment","QA");
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser")); // chrome, firefox
         extentReports.setSystemInfo("Automation Engineer", "Ertugrul");
@@ -38,6 +54,7 @@ public abstract class TestBaseRapor {
     }
 
 
+    //*@AfterMethod her test methodundan sonra calisacak
     // Her test methodundan sonra eğer testte hata varsa, ekran görüntüsü alıp rapora ekliyor
     @AfterMethod(alwaysRun = true)
     public void tearDownMethod(ITestResult result) throws IOException {
@@ -54,11 +71,11 @@ public abstract class TestBaseRapor {
 
     }
 
-
+    //* tum testler bitince en son bu calisacak
     // Raporlandırmayı sonlandırmak icin
     @AfterTest(alwaysRun = true)
     public void tearDownTest() {
 
-        extentReports.flush();
+        extentReports.flush(); // flush() methodu raporu noktaliyor.
     }
 }

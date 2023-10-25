@@ -94,6 +94,10 @@ public class ReusableMethods {
     }
 
     //========Switching Window=====//
+    //*window degistirmek istedigimiz zaman ikinci sayfanin window handle degerini
+    //*bulmak ve gecmek icin baya bi ugrasiyorduk
+    //*eger gececeginiz sayfanin WindowHandle degerini biliyorsaniz,
+    //*title'ini biliyorsaniz isimiz cok kolay
     public static void switchToWindow(String targetTitle) {
         String origin = Driver.getDriver().getWindowHandle();
         for (String handle : Driver.getDriver().getWindowHandles()) {
@@ -112,6 +116,8 @@ public class ReusableMethods {
     }
 
     //==========Return a list of string given a list of Web Element====////
+    //*bu methodla web elementlerden olusan bir list yoluyoruz parametre olarak
+    //*o da bize String'lerden olusan bir list döndürüyor
     public static List<String> stringListeCevir(List<WebElement> list) {
         List<String> elemTexts = new ArrayList<>();
         for (WebElement el : list) {
@@ -123,6 +129,8 @@ public class ReusableMethods {
     }
 
     //========Returns the Text of the element given an element locator==//
+    //*locator'i veriyorsun sana istiyorsan
+    //*verdigin locator'daki web elementin ustundeki yaziyi döndürüyor.
     public static List<String> getElementsText(By locator) {
         List<WebElement> elems = Driver.getDriver().findElements(locator);
         List<String> elemTexts = new ArrayList<>();
@@ -136,6 +144,7 @@ public class ReusableMethods {
 
 
     //===============Explicit Wait==============//
+    //*waitForVisibility= görünürlük icin bekleme
     public static WebElement waitForVisibility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));

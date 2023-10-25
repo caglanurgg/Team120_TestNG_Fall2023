@@ -10,6 +10,7 @@ import utilities.Driver;
 
 public class C04_DataProviderIleAmazonCokluArama {
 
+    //*dataProvider'da dikkat etmem gereken tek sey bana 2 katli bir array dondurmesidir.
 
     @DataProvider
     public static Object[][] urunListesi() {
@@ -21,6 +22,8 @@ public class C04_DataProviderIleAmazonCokluArama {
 
     // String[] aranacakUrunler = {"Nutella","Java","Armut","elma","Erik","Malatya"};
 
+//*disardan, methodun disinda buraya bir listedeki elemanlari yollayacak
+//*bir yapi kuracagiz. dataProvider ile
 
     @Test(dataProvider = "urunListesi")
     public void amazonCokluAramaTesti(String urun){

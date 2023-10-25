@@ -8,7 +8,7 @@ import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 public class C02_RaporluNegatifLoginTesti extends TestBaseRapor {
-
+    //*TestBaseRapor'dan faydalanabilmek icin  extends yaptik
     QualitydemyPage qualitydemyPage;
 
 
@@ -24,13 +24,17 @@ public class C02_RaporluNegatifLoginTesti extends TestBaseRapor {
 
         qualitydemyPage.emailKutusu.sendKeys("anevzatcelik@gmail.com");
         extentTest.info("Username olarak gecerli username yazar");
+
         qualitydemyPage.passwordKutusu.sendKeys("12345");
         extentTest.info("password olarak gecersiz password yazar");
+
         qualitydemyPage.loginButonu.click();
         extentTest.info("login butonuna basar");
         ReusableMethods.bekle(1);
+
         Assert.assertTrue(qualitydemyPage.emailKutusu.isDisplayed());
         extentTest.pass("giris yapilamadigini test eder");
+
         Driver.closeDriver();
         extentTest.info("sayfayi kapatir");
     }
@@ -41,18 +45,24 @@ public class C02_RaporluNegatifLoginTesti extends TestBaseRapor {
 
         Driver.getDriver().get("https://www.qualitydemy.com/");
         extentTest.info("Kullanici qualitydemy anasayfasina gider");
+
         qualitydemyPage= new QualitydemyPage();
         qualitydemyPage.ilkLoginLinki.click();
         extentTest.info("ilk sayfadaki login linkine tiklar");
+
         qualitydemyPage.emailKutusu.sendKeys("alican@gmail.com");
         extentTest.info("Username olarak gecersiz username yazar");
+
         qualitydemyPage.passwordKutusu.sendKeys("Nevzat152032");
         extentTest.info("password olarak gecerli password yazar");
+
         qualitydemyPage.loginButonu.click();
         extentTest.info("login butonuna basar");
         ReusableMethods.bekle(1);
+
         Assert.assertTrue(qualitydemyPage.emailKutusu.isDisplayed());
         extentTest.pass("giris yapilamadigini test eder");
+
         Driver.closeDriver();
         extentTest.info("sayfayi kapatir");
     }
@@ -63,18 +73,24 @@ public class C02_RaporluNegatifLoginTesti extends TestBaseRapor {
 
         Driver.getDriver().get("https://www.qualitydemy.com/ ");
         extentTest.info("Kullanici qualitydemy anasayfasina gider");
+
         qualitydemyPage= new QualitydemyPage();
         qualitydemyPage.ilkLoginLinki.click();
         extentTest.info("ilk sayfadaki login linkine tiklar");
+
         qualitydemyPage.emailKutusu.sendKeys("alican@gmail.com");
         extentTest.info("Username olarak gecersiz username yazar");
+
         qualitydemyPage.passwordKutusu.sendKeys("12345");
         extentTest.info("password olarak gecersiz password yazar");
+
         qualitydemyPage.loginButonu.click();
         extentTest.info("login butonuna basar");
         ReusableMethods.bekle(1);
+
         Assert.assertTrue(qualitydemyPage.emailKutusu.isDisplayed());
         extentTest.pass("giris yapilamadigini test eder");
+
         Driver.closeDriver();
         extentTest.info("sayfayi kapatir");
     }

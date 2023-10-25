@@ -11,11 +11,12 @@ import utilities.Driver;
 public class C05_QualitydemyCokluNegatifLoginTesti {
 
 
-    @DataProvider
+    @DataProvider //* bu username ve password'ler @DataProvider'la gelecek
     public static Object[][] gecersizKullaniciListesi() {
 
         String[][] gecersizKullaniciBilgileri = new String[10][2];
-        Faker faker = new Faker();
+        //*String[10][2]--> 10 tane 2 elemanli arr olusturmus olacak
+        Faker faker = new Faker(); //* faker objesi olusturduk
 
         for (int i = 0; i <gecersizKullaniciBilgileri.length ; i++) {
 
@@ -28,7 +29,11 @@ public class C05_QualitydemyCokluNegatifLoginTesti {
     }
 
     @Test(dataProvider = "gecersizKullaniciListesi")
+    //* eger 5'i icin de calissin istiyorsak disardan gelmesi lazim bu yüzden
+    //* parametre olarak gelecek
+    //*disardan gelen username ve password'e gore  bu testi tekrar tekrar calistiracak
     public void cokluNegatifTest(String username, String password){
+
         // qualitydemy anasayfaya gidin
         Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
 
@@ -47,5 +52,6 @@ public class C05_QualitydemyCokluNegatifLoginTesti {
 
         // sayfayi kapatin
         Driver.closeDriver();
+
     }
 }
